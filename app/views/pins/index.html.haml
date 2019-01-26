@@ -1,7 +1,7 @@
 #pins.transitions-enabled
  - @pins.each do |pin|
   .panel-body
-   .box.panel.panel-default
+   .box.panel.panel-primary
     %h2= link_to pin.title, pin
     = link_to (image_tag pin.image.url(:medium)), pin
     %p= pin.description

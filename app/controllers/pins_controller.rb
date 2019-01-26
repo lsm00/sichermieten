@@ -1,9 +1,9 @@
 class PinsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :find_pin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pins = Pin.all.order("created_at DESC")
+    @pins = current_user.pins.all.order("created_at DESC") #Show all content of current logged in user only
   end
 
   def new
@@ -11,6 +11,12 @@ class PinsController < ApplicationController
   end
 
   def show
+    if current_user == @pin.user                                      #Check if current user is owner of content
+      @pins = current_user.pins.all.order("created_at DESC")          #Show in desc. order
+    else
+      flash[:danger] = "Wrong user! You are not allowed to do this!"  #If wrong user, show warning
+      redirect_to root_path                                           #Go back to start page
+    end
   end
 
   def create
