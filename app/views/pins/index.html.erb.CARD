@@ -1,0 +1,20 @@
+<div class="transitions-enabled" id="pins">
+  <% @pins.each do |pin| %>
+  <div class="card" style="width: 500px;">
+    <img class="card-img-top"><%= link_to (image_tag pin.image.url(:"medium")), pin %></img>
+    <div class="card-body">
+      <h2 class="card-title"><%= link_to pin.title, pin %></h2>
+      <p class="card-text"><%= pin.description %></p>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown Button
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">First Item</a><br>
+        <a class="dropdown-item" href="#">Second Item</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

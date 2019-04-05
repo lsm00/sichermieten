@@ -1,0 +1,32 @@
+<div class="transitions-enabled" id="pins">
+  <div class="container-fluid">
+    <!-- Loop -->
+  <% @pins.each do |pin| %>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <img class="img-fluid"><%= link_to (image_tag pin.image.url), pin %></img>
+            <span class="text-justify">Some text</span>
+          </div>
+          <div class="col-lg-2">
+            <h2 class="title"><%= link_to pin.title, pin %></h2>
+            <p class="content"><%= pin.description %></p>
+          </div>
+
+            <!-- Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown Button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">First Item</a><br>
+                <a class="dropdown-item" href="#">Second Item</a>
+              </div>
+            </div>
+
+
+    </div>
+    <% end %>
+
+  </div>
+</div>

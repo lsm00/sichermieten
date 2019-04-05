@@ -5,5 +5,4 @@
     %h2= link_to pin.title, pin
     = link_to (image_tag pin.image.url(:medium)), pin
     %p= pin.description
-
   %hr

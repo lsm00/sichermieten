@@ -1,0 +1,59 @@
+<!--
+<%= image_tag @pin.image.url%>
+
+<%= @pin.title %>
+
+<%= @pin.description %>
+
+<%= @pin.addon %>
+
+<%= mail_to @pin.user.email %>
+
+<%= link_to "Back", root_path, class: "btn btn-primary" %>
+
+<% if current_user == @pin.user %>
+<%= link_to "Edit", edit_pin_path, class: "btn btn-primary" %>
+<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+<% else %>
+<% end %>
+
+-->
+
+<div class="wrapper">
+
+  <div class="header">
+    <%= @pin.title %>
+  </div>
+
+  <div class="sidebar">
+
+
+  </div>
+
+  <div class="content">
+    <div class="desc">
+      <p>  <%= @pin.description %> </p>
+    </div>
+
+    <div class="s-image">
+      <%= image_tag @pin.image.url%>
+    </div>
+
+    <div class="addon">
+      <p> <%= @pin.addon %> </p>
+    </div>
+  </div>
+
+  <div class="footer">
+
+    <%= link_to "Back", root_path, class: "btn btn-primary" %>
+
+    <% if current_user == @pin.user %>
+    <%= link_to "Edit", edit_pin_path, class: "btn btn-primary" %>
+
+    <%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+    <% else %>
+    <% end %>
+  </div>
+
+</div>
